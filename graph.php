@@ -64,21 +64,30 @@ End date selected: <?php echo $_POST["edate"]; ?><br><br>
 
 
 <!-- Use cancasjs to draw a grpah use data from array arrJ -->
+    
+
 <!DOCTYPE HTML>
 <html>
 <head>
 <script>
-window.onload = function () {
+window.onload = function() {
  
 var chart = new CanvasJS.Chart("chartContainer", {
-	title: {
-		text: "Users over Time"
+	animationEnabled: true,
+	title:{
+		text: "Growth of Users"
 	},
 	axisY: {
-		title: "Number of Users"
+		title: "Users",
+		includeZero: false,
+
 	},
 	data: [{
-		type: "line",
+		type: "bar",
+		indexLabel: "{y}",
+		indexLabelPlacement: "inside",
+		indexLabelFontWeight: "bolder",
+		indexLabelFontColor: "white",
 		dataPoints: <?php echo json_encode($arrJ, JSON_NUMERIC_CHECK); ?>
 	}]
 });
@@ -90,11 +99,7 @@ chart.render();
 <body>
 <div id="chartContainer" style="height: 370px; width: 100%;"></div>
 <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
-
 </body>
-</html>           
-
-
-
+</html>             
 
 
