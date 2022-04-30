@@ -36,7 +36,7 @@ $newLastdate = date_format($lastdate,"Y-m-d");
 <html>  
 <body>
 <h1>Visualise Growth of Userbase</h1>
-<p>Select a start and end dat and click the submit button to see the userbase graph<p>
+<p>Select a start and end date and click the submit button to see the userbase graph<p>
 <form action="graph.php" method="post">
 Start Date: <input type="date" name="sdate"  id="sdate" min='<?php echo $newFirstdate;?>' max='<?php echo $newLastdate;?>' required><br><br>   
 End Date: <input type="date" name="edate" id="edate" min='<?php echo $newFirstdate;?>' max='<?php echo $newLastdate;?>' required><br><br>  
